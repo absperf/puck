@@ -1,9 +1,15 @@
 language: ruby
 sudo: false
+before_install: gem install bundler --version "$BUNDLER_VERSION"
 script: bundle exec rake spec
 rvm:
   - jruby
   - jruby-head
+env:
+  - BUNDLER_VERSION="~> 1.7.0"
+  - BUNDLER_VERSION="~> 1.8.0"
+  - BUNDLER_VERSION="~> 1.9.0"
+  - BUNDLER_VERSION="~> 1.10.0"
 matrix:
   allow_failures:
     - rvm: jruby-head
