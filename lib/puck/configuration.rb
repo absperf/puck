@@ -20,7 +20,7 @@ module Puck
 
     private
 
-    SCALAR_ARGS = [:app_name, :app_dir, :build_dir, :jruby_complete].freeze
+    SCALAR_ARGS = [:app_name, :app_dir, :exe_name, :build_dir, :jruby_complete].freeze
     LIST_ARGS = [:extra_files].freeze
     ARG_PREFIX = '--'.freeze
 
