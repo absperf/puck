@@ -39,6 +39,8 @@ Puck also exposes all gem's bin files, as well as JRuby's, so if you have Pry am
 
 to get a Pry session that can access your application's code.
 
+Unless if you create a jar file with the `exe_name` parameter. This will only launch that specific executable in the application's bin directory. It essentially changes the way you launch the application from `java -jar jar-name.jar executable-name arg1 arg2 arg3` to `java -jar executable-jar-name.jar arg1 arg2 arg3`.
+
 ### Creating a Jar from the command line
 
 Just run `puck` and it will build a Jar file from your app. The Jar will be placed in a directory called `build` in your application's root directory.
@@ -78,6 +80,7 @@ These are the options that you can set (check the [API documentation for `Puck::
 * `:gem_groups`: the groups from your `Gemfile` to include, defaults to `:default` (which is all gems that aren't in an explicit group). Don't include the group that contains `puck` and `jruby-jars`.
 * `:app_dir`: your application's root directory, useful to set if it isn't the current working directory (and you're not using Rake).
 * `:app_name`: the name of your application, it defaults to the name of the current working directory (and if you change that you don't need to change this too, you only need this option if you want a different name than the base directory's).
+* `:exe_name`: the name of an executable in your application's bin directory that you would like to launch.
 * `:build_dir`: defaults to `build`, but if you want the Jar file to end up somewhere else you can change it with this option.
 * `:jruby_complete`: if you don't want to depend on the `jruby-jars` gem for some reason you can provide the path to your own `jruby-complete.jar`
 * `:extra_files`: a list of files to include in the Jar. The option can be either an Array, in which case paths must be below the `:app_dir`, or a Hash, in which case the file specified by the key is included at the path specified by the corresponding value.
